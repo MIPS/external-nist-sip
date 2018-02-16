@@ -16,4 +16,9 @@ java_library_static {
     name: "nist-sip",
     srcs: ["java/**/*.java"],
     no_framework_libs: true,
+    errorprone: {
+        javacflags: [
+            "-Xep:MissingOverride:OFF",  // Ignore missing @Override.
+        ],
+    },
 }
